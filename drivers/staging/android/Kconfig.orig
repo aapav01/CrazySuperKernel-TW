@@ -144,6 +144,12 @@ config KSWAPD_NOSWAP
 
 config SAMP_HOTNESS
 	bool "Kill hidden process by hotness"
+<<<<<<< HEAD
+	default n
+	help
+	  This option change kill hidden process policy in LMK
+
+=======
 	default y
 	help
 	  This option change kill hidden process policy in LMK
@@ -156,6 +162,7 @@ config ANDROID_LMK_ADJ_RBTREE
 	  Use oom_score_adj rbtree to select the best proecss to kill
 	  when system in low memory status.
 
+>>>>>>> 392b0f7... staging: android: lowmemorykiller: implement task's adj rbtree
 endif # if ANDROID
 
 endmenu
