@@ -31,19 +31,26 @@ static int devfreq_simple_ondemand_func(struct devfreq *df,
 					u32 *flag)
 {
 	struct devfreq_dev_status stat;
+<<<<<<< HEAD
+	int err = df->profile->get_dev_status(df->dev.parent, &stat);
+=======
 	struct devfreq_msm_adreno_tz_data *priv = df->data;
 	struct xstats xs;
 	int err;
+>>>>>>> 46a69de...   PM / devfreq: Fix simple_ondemand crashing
 	unsigned long long a, b;
 	unsigned long max = (df->max_freq) ? df->max_freq : UINT_MAX;
 	unsigned long min = (df->min_freq) ? df->min_freq : 0;
 
+<<<<<<< HEAD
+=======
 	if (priv->bus.num)
 		stat.private_data = &xs;
 	else
 		stat.private_data = NULL;
 
 	err = df->profile->get_dev_status(df->dev.parent, &stat);
+>>>>>>> 46a69de...   PM / devfreq: Fix simple_ondemand crashing
 	if (err)
 		return err;
 
