@@ -1571,7 +1571,11 @@
 	qcom,chipid = <0x03030002>;
 	qcom,msm-bus,num-cases = <18>;
 	qcom,bus-control;
+<<<<<<< HEAD
+	qcom,initial-pwrlevel = <4>;
+=======
 	qcom,initial-pwrlevel = <6>;
+>>>>>>> 08b0085... msm8974pro: Add GPU overclocking to 657MHz + activate additional 27 MHz gpu frequency
 
 	/* Updated bus bandwidth requirements */
 	qcom,msm-bus,vectors-KBps =
@@ -1653,8 +1657,20 @@
                        qcom,io-fraction = <100>;
                 };
 
+<<<<<<< HEAD
+               qcom,gpu-pwrlevel@4 {
+                       reg = <4>;
+                       qcom,gpu-freq = <266000000>;
+                       qcom,bus-freq = <2>;
+                       qcom,io-fraction = <100>;
+               };			   
+			   
+               qcom,gpu-pwrlevel@5 {
+                       reg = <5>;
+=======
                 qcom,gpu-pwrlevel@5 {
                         reg = <5>;
+>>>>>>> 08b0085... msm8974pro: Add GPU overclocking to 657MHz + activate additional 27 MHz gpu frequency
                        qcom,gpu-freq = <200000000>;
                        qcom,bus-freq = <2>;
                        qcom,io-fraction = <100>;
