@@ -5886,8 +5886,13 @@ static void synaptics_rmi4_input_close(struct input_dev *dev)
 
 	if (rmi4_data->use_deepsleep) {
 		synaptics_rmi4_sensor_sleep(rmi4_data);
+<<<<<<< HEAD
+		gpio_tlmm_config(GPIO_CFG(rmi4_data->dt_data->scl_gpio, 3, GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_2MA), 1);
+		gpio_tlmm_config(GPIO_CFG(rmi4_data->dt_data->sda_gpio, 3, GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_2MA), 1);
+=======
 		gpio_tlmm_config(GPIO_CFG(rmi4_data->dt_data->scl_gpio, 3, GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_KT), 1);
 		gpio_tlmm_config(GPIO_CFG(rmi4_data->dt_data->sda_gpio, 3, GPIO_CFG_INPUT, GPIO_CFG_NO_PULL, GPIO_CFG_KT), 1);
+>>>>>>> 18a7e7f... synaptics_i2c_rmi: Screen wake and sleep functions
 	} else {
 		synaptics_rmi4_stop_device(rmi4_data);
 		if (!screen_wake_options || call_in_progress)

@@ -1010,6 +1010,12 @@ qup_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg msgs[], int num)
 	}
 
 
+<<<<<<< HEAD
+	if (dev->pdata->clk_ctl_xfer)
+		i2c_qup_pm_resume_clk(dev);
+
+	atomic_set(&dev->xfer_progress, 1);
+=======
 	if (screen_wake_options && dev->pwr_state == 0) {
 		if (dev->clk_ctl == 0) {
 			if (dev->pdata->src_clk_rate > 0)
@@ -1021,6 +1027,7 @@ qup_i2c_xfer(struct i2c_adapter *adap, struct i2c_msg msgs[], int num)
 		qup_i2c_pwr_mgmt(dev, 1);
 	}
 
+>>>>>>> 18a7e7f... synaptics_i2c_rmi: Screen wake and sleep functions
 	/* Initialize QUP registers during first transfer */
 	if (dev->clk_ctl == 0) {
 		int fs_div;
@@ -1823,6 +1830,12 @@ qup_i2c_remove(struct platform_device *pdev)
 #ifdef CONFIG_PM
 static int i2c_qup_pm_suspend_runtime(struct device *device)
 {
+<<<<<<< HEAD
+	struct platform_device *pdev = to_platform_device(device);
+	struct qup_i2c_dev *dev = platform_get_drvdata(pdev);
+	dev_dbg(device, "pm_runtime: suspending...\n");
+	i2c_qup_pm_suspend(dev);
+=======
 	if (!screen_wake_options)
 	{
 		struct platform_device *pdev = to_platform_device(device);
@@ -1838,6 +1851,7 @@ static int i2c_qup_pm_suspend_runtime(struct device *device)
 		}
 	}
 	pr_alert("PM: SUSPEND RUNTIME");
+>>>>>>> 18a7e7f... synaptics_i2c_rmi: Screen wake and sleep functions
 	return 0;
 }
 

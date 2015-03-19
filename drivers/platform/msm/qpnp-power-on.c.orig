@@ -197,8 +197,11 @@ static const char * const qpnp_poff_reason[] = {
 	[15] = "Triggered from STAGE3 (Stage 3 reset)",
 };
 
+<<<<<<< HEAD
+=======
 extern void screenwake_setdev(struct qpnp_pon * pon);
 
+>>>>>>> 18a7e7f... synaptics_i2c_rmi: Screen wake and sleep functions
 static int
 qpnp_pon_masked_write(struct qpnp_pon *pon, u16 addr, u8 mask, u8 val)
 {
