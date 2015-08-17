@@ -122,6 +122,12 @@ config CGROUP_BFQIO
 	  filesystem interface.  The name of the subsystem will be
 	  bfqio.
 
+config IOSCHED_TRIPNDROID
+	tristate "Tripndroid"
+	default y
+	---help---
+	  The Trip N Droid scheduler
+
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_CFQ
@@ -158,8 +164,6 @@ choice
 	config DEFAULT_NOOP
 		bool "No-op"
 
-<<<<<<< HEAD
-=======
 	config DEFAULT_FIOPS
 		bool "FIOPS" if IOSCHED_FIOPS=y
 
@@ -174,7 +178,10 @@ choice
 
 	config DEFAULT_FIFO
 		bool "fifo"
->>>>>>> 7a17e1f... sched: Add fifo, fiops, sio, vr and zen schedulers
+
+	config DEFAULT_TRIPNDROID
+		bool "TRIPNDROID" if IOSCHED_TRIPNDROID=y
+
 endchoice
 
 config DEFAULT_IOSCHED
@@ -184,6 +191,16 @@ config DEFAULT_IOSCHED
 	default "cfq" if DEFAULT_CFQ
 	default "bfq" if DEFAULT_BFQ
 	default "noop" if DEFAULT_NOOP
+<<<<<<< HEAD
+	default "fiops" if DEFAULT_FIOPS
+=======
+	default "zen" if DEFAULT_ZEN
+	default "sio" if DEFAULT_SIO
+	default "fiops" if DEFAULT_FIOPS
+	default "vr" if DEFAULT_VR
+	default "fifo" if DEFAULT_FIFO
+	default "tripndroid" if DEFAULT_TRIPNDROID
+>>>>>>> 47d48cd... block: Add Tripndroid scheduler and make it default
 
 endmenu
 
