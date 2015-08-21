@@ -18,10 +18,13 @@
 #include <linux/host_notify.h>
 #endif
 
+<<<<<<< HEAD
+=======
 #ifdef CONFIG_FORCE_FAST_CHARGE
 #include <linux/fastchg.h>
 #endif
 
+>>>>>>> b99af28... Added Fast Charge [yank555-lu]
 #if defined(CONFIG_MACH_KLTE_CTC)
 #include <linux/qpnp/power-on.h>
 #endif

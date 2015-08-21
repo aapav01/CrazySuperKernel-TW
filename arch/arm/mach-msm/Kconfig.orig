@@ -4911,17 +4911,22 @@ config MUIC_RESET_PIN_ENABLE
                 This request is from H/W team
 		In case of mUIC voltage drop, mUIC will be reset
 
+<<<<<<< HEAD
+=======
 config TERT_MI2S_ENABLE
 	bool "3rd mi2s devices"
 	default n
 	help
 	 This is TERT_MI2S_ENABLE driver for maxim devies.
 
+>>>>>>> b99af28... Added Fast Charge [yank555-lu]
 config SEC_SMART_MGR_RUNQUEUE_AVG
 	default n
 	bool "Samsung added for read current run queue"
 	help
 	  Support for Smart MGR function.
+<<<<<<< HEAD
+=======
 
 config FORCE_FAST_CHARGE
 	bool "Force fast charging (AC/USB) by Yank555.lu"
@@ -4930,4 +4935,5 @@ config FORCE_FAST_CHARGE
 	  A simple sysfs interface to force adapters that
 	  are detected as USB to charge as AC (1A/h) or to set
 	  custom charging currents for AC and USB.
+>>>>>>> b99af28... Added Fast Charge [yank555-lu]
 endif
