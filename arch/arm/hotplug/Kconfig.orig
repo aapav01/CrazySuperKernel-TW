@@ -4,6 +4,21 @@ config INTELLI_PLUG
         help
           Generic Intelli-plug cpu hotplug driver for ARM SOCs
 
+<<<<<<< HEAD
+=======
+config ALUCARD_HOTPLUG
+	bool "Enable alucard-hotplug cpu hotplug driver"
+	default n
+	help
+	  Generic Alucard-hotplug cpu hotplug driver for ARM SOCs
+
+config MSM_HOTPLUG
+	bool "MSM hotplug driver"
+	depends on HOTPLUG_CPU
+	default n
+	help
+	  The MSM hotplug driver controls on-/offlining of additional cores based
+	  on current cpu load.
 
 config ZEN_DECISION
 	bool "Zen Decision: MSM Userspace Handler"
@@ -32,3 +47,4 @@ config ZEN_DECISION
 	  services.
 
 	  If unsure, say N.
+>>>>>>> b2a05e4... added MSM_ZEN_Decision Hotplug credits bbedward
