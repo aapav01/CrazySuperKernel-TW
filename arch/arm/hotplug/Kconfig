@@ -50,6 +50,6 @@ config ASMP
 
 config MSM_SLEEPER
 	bool "CPU hotplug driver"
-	default y
+	default n
 	help
 	  CPU hotplug driver
