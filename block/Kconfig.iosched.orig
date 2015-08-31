@@ -65,6 +65,7 @@ config CFQ_GROUP_IOSCHED
 	---help---
 	  Enable group IO scheduling in CFQ.
 
+<<<<<<< HEAD
 config IOSCHED_FIOPS
 	tristate "FIOPS I/O scheduler"
 	default y
@@ -128,6 +129,8 @@ config IOSCHED_TRIPNDROID
 	---help---
 	  The Trip N Droid scheduler
 
+=======
+>>>>>>> parent of 4d41a57... sched: Add BFQ v7r2
 choice
 	prompt "Default I/O scheduler"
 	default DEFAULT_CFQ
@@ -150,16 +153,6 @@ choice
 
 	config DEFAULT_CFQ
 		bool "CFQ" if IOSCHED_CFQ=y
-
-	config DEFAULT_BFQ
-		bool "BFQ" if IOSCHED_BFQ=y
-		help
-		  Selects BFQ as the default I/O scheduler which will be
-		  used by default for all block devices.
-		  The BFQ I/O scheduler aims at distributing the bandwidth
-		  as desired, independently of the disk parameters and with
-		  any workload. It also tries to guarantee low latency to
-		  interactive and soft real-time applications.
 
 	config DEFAULT_NOOP
 		bool "No-op"
@@ -189,18 +182,13 @@ config DEFAULT_IOSCHED
 	default "deadline" if DEFAULT_DEADLINE
 	default "row" if DEFAULT_ROW
 	default "cfq" if DEFAULT_CFQ
-	default "bfq" if DEFAULT_BFQ
 	default "noop" if DEFAULT_NOOP
-<<<<<<< HEAD
-	default "fiops" if DEFAULT_FIOPS
-=======
 	default "zen" if DEFAULT_ZEN
 	default "sio" if DEFAULT_SIO
 	default "fiops" if DEFAULT_FIOPS
 	default "vr" if DEFAULT_VR
 	default "fifo" if DEFAULT_FIFO
 	default "tripndroid" if DEFAULT_TRIPNDROID
->>>>>>> 47d48cd... block: Add Tripndroid scheduler and make it default
 
 endmenu
 
