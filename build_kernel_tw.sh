@@ -3,7 +3,7 @@ export KERNELDIR=`readlink -f .`
 export RAMFS_SOURCE="/home/francesco/Crazy-Kernel-TW/Kernel_tw/Ramdisks/ramfs_tw"
 export PARENT_DIR=`readlink -f ..`
 export USE_SEC_FIPS_MODE=true
-export CROSS_COMPILE=/home/francesco/arm-cortex_a15-linux-gnueabihf-linaro_4.9.4-2015.06/bin/arm-cortex_a15-linux-gnueabihf-
+export CROSS_COMPILE=/home/francesco/arm-eabi-6.0/bin/arm-eabi-
 
 # if [ "v1" != "" ];then
 #  export KERNELDIR=`readlink -f v1`
